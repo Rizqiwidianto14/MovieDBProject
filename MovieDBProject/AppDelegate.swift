@@ -13,9 +13,7 @@ import netfox
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
-    var navigationController: UINavigationController?
-//    var genresViewController: GenresView?
-    
+    var navigationController: UINavigationController?    
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 #if DEBUG
@@ -23,8 +21,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 #endif
         
         window = UIWindow(frame:UIScreen.main.bounds)
-//        genresViewController = GenresView(nibName: String(describing: GenresView.self), bundle: nil)
-//        guard let genresViewController = genresViewController else { return true}
         let root = ScreenConfigurator.shared.createGenresScreen()
         navigationController = UINavigationController(rootViewController: root)
         window?.rootViewController = navigationController

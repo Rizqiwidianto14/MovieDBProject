@@ -8,7 +8,7 @@
 import Foundation
 
 class MoviesInteractor: MoviesPresenterToInteractor {
-    var presenter: MoviesInteractorToPresenter?
+    weak var presenter: MoviesInteractorToPresenter?
     var manager: MovieManagerProtocol?
     
     init(with manager: MovieManagerProtocol = MovieManager()) {

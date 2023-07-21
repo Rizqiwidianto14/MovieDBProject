@@ -8,7 +8,7 @@
 import Foundation
 
 class MoviesPresenter: MoviesViewToPresenter {
-    var view: MoviesPresenterToView?
+    weak var view: MoviesPresenterToView?
     var interactor: MoviesPresenterToInteractor?
     var router: MoviesPresenterToRouter?
     var pageId: Int?

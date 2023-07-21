@@ -8,7 +8,7 @@
 import Foundation
 
 class GenresInteractor: GenresPresenterToInteractor {
-    var presenter: GenresInteractorToPresenter?
+    weak var presenter: GenresInteractorToPresenter?
     var manager: MovieManagerProtocol?
     
     init(with manager: MovieManagerProtocol = MovieManager()) {

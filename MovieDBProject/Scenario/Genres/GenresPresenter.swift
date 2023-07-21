@@ -9,7 +9,7 @@ import Foundation
 
 class GenresPresenter: GenresViewToPresenter {
     
-    var view: GenresPresenterToView?
+    weak var view: GenresPresenterToView?
     var interactor: GenresPresenterToInteractor?
     var router: GenresPresenterToRouter?
     var genresViewModel: [GenreViewModel]?

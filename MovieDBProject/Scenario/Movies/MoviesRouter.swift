@@ -9,7 +9,7 @@ import Foundation
 
 class MoviesRouter: MoviesPresenterToRouter {
     func navigateBack(from view: MoviesPresenterToView?) {
-        print("")
+        
     }
     
 }
