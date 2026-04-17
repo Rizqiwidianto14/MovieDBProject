@@ -8,7 +8,7 @@ target 'MovieDBProject' do
   # Pods for MovieDBProject
   pod 'Moya', '~> 15.0'
   pod 'netfox'
-  pod 'Kingfisher', '~> 7.0'
+  pod 'Kingfisher', '~> 7.10'
 
 
 

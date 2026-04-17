@@ -32,7 +32,7 @@ class MoviesView: UIViewController, MoviesPresenterToView {
     
 }
 
-extension MoviesView: UICollectionViewDelegate, UICollectionViewDataSource {
+extension MoviesView: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         guard let movies = presenter?.getMovies() else { return .zero }
         return movies.count
@@ -49,13 +49,25 @@ extension MoviesView: UICollectionViewDelegate, UICollectionViewDataSource {
         return cell
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: CGFloat((moviesCollectionView.frame.size.width / 4)), height: UIScreen.main.bounds.width/2)
-        
-    }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 10.0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        sizeForItemAt indexPath: IndexPath) -> CGSize {
+
+        let padding: CGFloat = 16
+        let spacing: CGFloat = 10
+        let itemsPerRow: CGFloat = 2
+
+        let totalSpacing = (itemsPerRow - 1) * spacing + padding * 2
+        let width = (collectionView.frame.width - totalSpacing) / itemsPerRow
+
+        let height = width * 1.5
+
+        return CGSize(width: width, height: height)
     }
     
     
